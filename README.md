@@ -42,14 +42,14 @@ Google Colabは、GPUへの無料アクセスを提供するクラウドベー�
 Roboflowについて
 Roboflowはデータセットのアノテーションを簡単かつ迅速に行い、さまざまなモデルのトレーニングに適した形式に変換できるソリューションを提供しています。無料で利用可能なRoboflowのパブリックバージョンを使用することができます。https://app.roboflow.com/
 
-<div align="left">
-    <img src="images/dataset1.png" alt="YOLO" width="70%">
+<div align="medium">
+    <img src="images/dataset1.png" alt="YOLO" width="100%">
 </div>
 
 ここでは、135枚の領収書サンプルをRoboflowアカウントにアップロードしてアノテーションを行います。このプロジェクトでは、領収書から以下の3つのラベルを抽出します：『会社ロゴ』、『領収書合計』、『領収書の日付』、『店の電話』。そのため、それぞれのラベル名を入力し、各領収書サンプルのアノテーションを作ります。
 
-<div align="left">
-    <img src="images/dataset2.png" alt="YOLO" width="70%">
+<div align="medium">
+    <img src="images/dataset2.png" alt="YOLO" width="100%">
 
 
 アノテーションが完了したら、いくつかの前処理を行います。例えば、データセットを訓練用、検証用、テスト用に分割することや、画像の拡張（既存の画像から新しい訓練用サンプルを作成するプロセス）を行います。拡張手法としては、彩度の調整、反転、グレースケール変換などがあります。また、画像を640x640サイズにリサイズします（現在のYOLO v9は640x640サイズの画像しか処理できないため、このステップは必須です）。
@@ -57,8 +57,8 @@ Roboflowはデータセットのアノテーションを簡単かつ迅速に行
 これらの前処理を行った結果、データセットの87枚が訓練用、26枚を検証用、12枚はテスト用として準備されました。
 
 
-<div align="left">
-    <img src="images/dataset3.png" alt="YOLO" width="70%">
+<div align="medium">
+    <img src="images/dataset3.png" alt="YOLO" width="100%">
 
 </div>
 
