@@ -70,14 +70,14 @@ Roboflowはデータセットのアノテーションを簡単かつ迅速に行
 
 それでは、Colab上でYOLO v9モデルを使用してデータセットをどのように訓練するかを見ていきましょう。まず、Colabの「ランタイムのタイプを変更」オプションからハードウェアアクセラレータをT4 GPUに変更します。その後、YOLOv9のリポジトリをGithubからGoogleドライブにクローンする必要があります。そのために、Googleドライブをマウントしてリポジトリをクローンし、以下のコードを使用して必要なファイルやパッケージをすべてインストールします。
 
-###  Google Drive　を接続に
+###  Google Driveを接続に
 
 ```python
 from google.colab import drive
 drive.mount('/content/drive')
 ```
 
-### Clone and Install　クローンとインストール
+### クローンとインストール
 
 Clone YOLO v9 repository into your Google Drive.
 
@@ -110,7 +110,7 @@ version = project.version(version number)
 dataset = version.download("yolov9")
 ```
 
-## Train YOLO Model on reciepts　領収書データをトーレニング
+## 領収書データをトーレニング by YOLO
 
 その後、データセットを使ってYOLOモデルを訓練するためのトレーニングコードを実行します。ここでは、gelan-c weight.ptを使用してデータセットを訓練します。訓練を始める前に、モデルの設定ファイル（ここでは gelan-c.yaml）内のアンカー数を、データセットでアノテーションしたラベルの数に変更してください（この記事は３と使います）。モデルをより正確にするために、100エポックで訓練を行いました。ただし、必要に応じてエポック数を変更することも可能です。
 
@@ -142,7 +142,6 @@ Graph showing the model performance
 
 ## Validate Trained Model by using test images
    
-
 ```python
 import glob
 from IPython.display import Image, display
@@ -152,11 +151,11 @@ for image_path in glob.glob(f'{HOME}/yolov9/runs/detect/exp2/*.jpg')[:3]:
       print("\n")
 ```
  <div align="medium">
-    <img src="images/testresult1.jpg" alt="YOLO" width="100%">
+    <img src="images/testresult1.jpeg" alt="YOLO" width="100%">
 </div>
 
  <div align="medium">
-    <img src="images/testresult2.jpg" alt="YOLO" width="100%">
+    <img src="images/testresult2.jpeg" alt="YOLO" width="100%">
 </div>
 
 
