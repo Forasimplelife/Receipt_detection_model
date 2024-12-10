@@ -40,7 +40,20 @@ Google Colabは、強力なGPUへの無料アクセスを提供するクラウ�
 
 モデルのトレーニングを始めるための最初のステップは、包括的なデータセットを準備することです。現在、Roboflowはデータセットのアノテーションを簡単かつ迅速に行い、さまざまなモデルのトレーニングに適した形式に変換できるソリューションを提供しています。領収書のアノテーションには、無料で利用可能なRoboflowのパブリックバージョンを使用することができます。
 
+<div align="left">
+    <img src="images/dataset1" alt="RAG" width="70%">
+</div>
 
+
+
+<div align="left">
+    <img src="images/dataset2" alt="RAG" width="70%">
+
+
+<div align="left">
+    <img src="images/dataset3" alt="RAG" width="70%">
+
+</div>
 
 
 
