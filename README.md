@@ -21,6 +21,7 @@ https://github.com/WongKinYiu/yolov9
 <div style="max-width: 600px; word-wrap: break-word;">
 
 YOLOは「You Only Look Once」の略で、速度と精度の高さで知られる最先端のオブジェクト検出モデルです。このモデルの第9バージョン（v9）は、「Programmable Gradient Information（PGI）」や「Generalized Efficient Layer Aggregation Network（GELAN）」といった新しいアーキテクチャを導入し、機能と性能がさらに強化されています。YOLO v9は、モデルの学習能力を向上させるだけでなく、検出プロセス全体で重要な情報を保持することを可能にし、卓越した精度と性能を実現しています。
+
 この記事はYOLO v9モデルを使用して、スーパーでの買い物領収書を認識するシステムの構築
 
 </div>
@@ -31,13 +32,18 @@ YOLOは「You Only Look Once」の略で、速度と精度の高さで知られ�
 ### 環境を選ぶ
 <div style="max-width: 600px; word-wrap: break-word;">
 
-1. トーレニングはGoogle Colabを使用します。
+#### トーレニングはGoogle Colabを使用します。
 
 Google Colabは、強力なGPUへの無料アクセスを提供するクラウドベースのプラットフォームであり、ディープラーニングモデルのトレーニングに最適な選択肢です。データセットのアノテーションにはRoboflowを使用します。このツールは、データセットの管理とアノテーション作業を簡略化してくれるため、YOLO v9モデルのトレーニングに必要不可欠です。
 
-2. Roboflowでのデータセット準備
+####  Roboflowでのデータセット準備
 
 モデルのトレーニングを始めるための最初のステップは、包括的なデータセットを準備することです。現在、Roboflowはデータセットのアノテーションを簡単かつ迅速に行い、さまざまなモデルのトレーニングに適した形式に変換できるソリューションを提供しています。領収書のアノテーションには、無料で利用可能なRoboflowのパブリックバージョンを使用することができます。
+
+
+
+
+
 </div>
 
 
