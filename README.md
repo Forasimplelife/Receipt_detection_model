@@ -151,11 +151,11 @@ for image_path in glob.glob(f'{HOME}/yolov9/runs/detect/exp2/*.jpg')[:3]:
       print("\n")
 ```
  <div align="medium">
-    <img src="images/testresult1.jpeg" alt="YOLO" width="100%">
+    <img src="images/testresult1.jpeg" alt="YOLO" width="50%">
 </div>
 
  <div align="medium">
-    <img src="images/testresult2.jpeg" alt="YOLO" width="100%">
+    <img src="images/testresult2.jpeg" alt="YOLO" width="50%">
 </div>
 
 
