@@ -1,25 +1,20 @@
 
-# YOLOv9を使用して領収証認識システムを構築する 
+# YOLOv9で構築した領収書認識モデル
 
 ## Summary
 
 <div style="max-width: 600px; word-wrap: break-word;">
-
-本記事では、YOLO v9モデルを使用して、スーパーで収集した買い物の領収書を認識するシステムの構築方法について記載します。約130枚の領収書を収集し、3つのラベル（クラス）を付けてデータをアノテーションし、モデルをトレーニングしました。その結果、YOLO v9モデルは指定した3つのクラスを正確に認識することができました。
+本記事ではYOLO v9モデルを利用して、自分でスーパー買い物の領収書を収集して認識モデルの構築方法について記録します。その中に、125枚の領収書を収集し、3つのラベル（クラス）を付けてデータをアノテーションし、領収書認識モデルをトレーニングしました。結果として、指定した3つのクラスを正確に認識することができました。
 
 このプロジェクトは、YOLOv9を参考にして作成されています。詳細については以下のリポジトリをご参照ください：
 https://github.com/WongKinYiu/yolov9
-
 </div>
-
 
 ## はじめに
 
 ### YOLO v9について
 <div style="max-width: 600px; word-wrap: break-word;">
-
-YOLOは「You Only Look Once」の略で、速度と精度の高さで知られる最先端のオブジェクト検出モデルです。このモデルの第9バージョン（v9）は、「Programmable Gradient Information（PGI）」や「Generalized Efficient Layer Aggregation Network（GELAN）」といった新しいアーキテクチャを導入し、機能と性能がさらに強化されています。YOLO v9は、モデルの学習能力を向上させるだけでなく、検出プロセス全体で重要な情報を保持することを可能にし、卓越した精度と性能を実現しています。この記事はYOLO v9モデルを使用して、スーパーでの買い物領収書を認識するシステムの構築
-
+YOLOは「You Only Look Once」の略で、速度と精度の高さで知られる最先端のオブジェクト検出モデルです。このモデルの第9バージョン（v9）は、「Programmable Gradient Information（PGI）」や「Generalized Efficient Layer Aggregation Network（GELAN）」といった新しいアーキテクチャを導入し、機能と性能がさらに強化されています。YOLO v9は、モデルの学習能力を向上させるだけでなく、検出プロセス全体で重要な情報を保持することを可能にし、卓越した精度と性能を実現しています。
 </div>
 
 
