@@ -31,7 +31,7 @@ Google Colabは、GPUへの無料アクセスを提供するクラウドベー�
 
 #### 1. 領収書データを収集
 
-スーパーで200枚以上の領収書を収集して、その中は、比較的綺麗なと折り目の125枚を選び、訓練に行きます。
+自分で買い物の領収書が200枚以上の領収書を収集して、その中は、比較的綺麗なと折り目ないの125枚を選び、訓練に行きます。
 
 #### 2. Roboflowでアノテーションに
 
@@ -91,7 +91,7 @@ drive.mount('/content/drive')
 Clone YOLO v9 repository into your Google Drive.
 
 ```python
-!git clone https://github.com/SkalskiP/yolov9.git
+!git clone https://github.com/WongKinYiu/yolov9
 %cd yolov9
 !pip install -r requirements.txt -q
 ```
