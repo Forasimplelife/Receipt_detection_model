@@ -6,6 +6,7 @@
 <div style="max-width: 600px; word-wrap: break-word;">
 本記事ではYOLO v9モデルを利用して、自分でスーパー買い物の領収書を収集して認識モデルの構築方法について記録します。その中に、125枚の領収書を収集し、3つのラベル（クラス）を付けてデータをアノテーションし、領収書認識モデルをトレーニングしました。結果として、指定した3つのクラスを正確に認識することができました。
 
+
 このプロジェクトは、YOLOv9を参考にして作成されています。詳細については以下のリポジトリをご参照ください：
 https://github.com/WongKinYiu/yolov9
 </div>
@@ -32,7 +33,7 @@ Google Colabは、GPUへの無料アクセスを提供するクラウドベー�
 
 スーパーで200枚以上の領収書を収集して、その中は、比較的綺麗なと折り目の125枚を選び、訓練に行きます。
 
-#### 2. アノテーションのツールを選び（Roboflow）
+#### 2. Roboflowでアノテーションに
 
 アノテーションツールにはいくつかの選択肢がありますが、最初にLabelImgとLabelmeを試しました。しかし、比較した結果、ウェブベースのRoboflowが非常に使いやすいことが分かりました。今回はRoboflowを使用してアノテーションを行いました。
 
@@ -58,7 +59,7 @@ Roboflowはデータセットのアノテーションを簡単かつ迅速に行
 </div>
 
 
-#### 5. 前処理に行きます
+#### 5. 前処理
 
 アノテーションが完了したら、いくつかの前処理を行います。例えば、データセットを訓練用、検証用、テスト用に分割りします。また、画像を640x640サイズにリサイズします（現在のYOLO v9は640x640サイズの画像しか処理できないため、このステップは必須です）。
 
@@ -73,10 +74,10 @@ Roboflowはデータセットのアノテーションを簡単かつ迅速に行
 データセットの作成が完了したら、Roboflowの「Export Dataset」オプションを使用して、YOLO v9モデル用のデータセットをエクスポートできます。エクスポートしたデータセットコードを取得し、このコードをColab上で使用してモデルの訓練を行います。
 
 
+## トーレニングの流れ
 
-## Google Colabでトーレニングの流れ
-
-それでは、Colab上でYOLO v9モデルを使用してデータセットをどのように訓練するかを見ていきましょう。まず、Colabの「ランタイムのタイプを変更」オプションからハードウェアアクセラレータをT4 GPUに変更します。その後、YOLOv9のリポジトリをGithubからGoogleドライブにクローンする必要があります。そのために、Googleドライブをマウントしてリポジトリをクローンし、以下のコードを使用して必要なファイルやパッケージをすべてインストールします。
+それでは、Colab上でYOLO v9モデルを使用してデータセットをどのように訓練するかを見ていきましょう。
+まず、Colabの「ランタイムのタイプを変更」オプションからハードウェアアクセラレータをT4 GPUに変更します。その後、YOLOv9のリポジトリをGithubからGoogleドライブにクローンする必要があります。そのために、Googleドライブをマウントしてリポジトリをクローンし、以下のコードを使用して必要なファイルやパッケージをすべてインストールします。
 
 ###  Google Driveを接続に
 
@@ -85,7 +86,7 @@ from google.colab import drive
 drive.mount('/content/drive')
 ```
 
-### クローンとインストール
+### YOLOv9のリポジトリをクローンと必要なパッケージをインストール
 
 Clone YOLO v9 repository into your Google Drive.
 
@@ -106,7 +107,7 @@ Clone YOLO v9 repository into your Google Drive.
 !wget -P {HOME}/weights -q https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-e.pt
 ```
 
-## データセットをダウンロード
+## Roboflowからデータセットをインポート
 次に、Roboflowで作成したデータセットをインポートします，その前に、Roboflowパッケージをインストールする必要があります。
 
 ```python
@@ -118,7 +119,7 @@ version = project.version(version number)
 dataset = version.download("yolov9")
 ```
 
-## 領収書データをトーレニング by YOLO
+## トーレニング
 
 その後、データセットを使ってYOLOモデルを訓練するためのトレーニングコードを実行します。ここでは、gelan-c weight.ptを使用してデータセットを訓練します。訓練を始める前に、モデルの設定ファイル（ここでは gelan-c.yaml）内のアンカー数を、データセットでアノテーションしたラベルの数に変更してください（この記事は３と使います）。モデルをより正確にするために、100エポックで訓練を行いました。ただし、必要に応じてエポック数を変更することも可能です。
 
@@ -133,9 +134,9 @@ dataset = version.download("yolov9")
 --hyp hyp.scratch-high.yaml
 ```
 
-## 訓練の結果
+## トーレニングの結果
 
-これでモデルの訓練が完了しました。モデルを100エポックで訓練した結果、全クラスにおいて平均適合率（mean average precision）が0.95という良好な精度を達成しました。
+これでモデルの訓練が完了しました。モデルを100エポックで訓練した結果、全クラスにおいて平均適合率（mean average precision）が0.9という良好な精度を達成しました。
 
  <div align="medium">
     <img src="images/results1.png" alt="YOLO" width="100%">
@@ -148,7 +149,7 @@ Accuracy and Precision of the trained YOLO-v9 model
 Graph showing the model performance
 
 
-## Validate Trained Model by using test images
+## テストイメージを使って検証
    
 ```python
 import glob
