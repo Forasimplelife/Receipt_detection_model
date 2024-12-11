@@ -152,6 +152,11 @@ Graph showing the model performance
 ## テストイメージを使って検証
    
 ```python
+!python detect.py \
+--img 640 --conf 0.5 --device 0 \
+--weights {HOME}/yolov9/runs/train/exp2/weights/best.pt \
+--source {HOME}/yolov9/test/images
+
 import glob
 from IPython.display import Image, display
 
@@ -172,9 +177,6 @@ for image_path in glob.glob(f'{HOME}/yolov9/runs/detect/exp2/*.jpg')[:3]:
 <details><summary> <b>Expand</b> </summary>
 
 * [https://github.com/AlexeyAB/darknet](https://github.com/AlexeyAB/darknet)
-* [https://github.com/WongKinYiu/yolor](https://github.com/WongKinYiu/yolor)
-* [https://github.com/WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7)
+* [https://github.com/WongKinYiu/yolov9](https://github.com/WongKinYiu/yolov9)
 * [https://github.com/VDIGPKU/DynamicDet](https://github.com/VDIGPKU/DynamicDet)
 * [https://github.com/DingXiaoH/RepVGG](https://github.com/DingXiaoH/RepVGG)
-* [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5)
-* [https://github.com/meituan/YOLOv6](https://github.com/meituan/YOLOv6)
