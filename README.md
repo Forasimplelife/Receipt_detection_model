@@ -168,7 +168,7 @@ for image_path in glob.glob(f'{HOME}/yolov9/runs/detect/exp2/*.jpg')[:3]:
       print("\n")
 ```
  <div align="medium">
-    <img src="images/testresult.png" alt="YOLO" width="50%">
+    <img src="images/testresult.png" alt="YOLO" width="100%">
 </div>
 
 ## Reference
