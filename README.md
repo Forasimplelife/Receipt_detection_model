@@ -12,7 +12,7 @@
 </div>
 
  <div align="medium">
-    <img src="images/testresult.jpeg" alt="YOLO" width="100%">
+    <img src="images/testresult.png" alt="YOLO" width="100%">
 </div>
 
 
