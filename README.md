@@ -9,16 +9,14 @@
 このプロジェクトは、[YOLOv9](https://github.com/WongKinYiu/yolov9) を参考にして作成されています。
 
 結果として、3つのラベルの性格て検出されました。
-
- <div align="medium">
-    <img src="images/testresult1.jpeg" alt="YOLO" width="50%">
 </div>
 
  <div align="medium">
-    <img src="images/testresult2.jpeg" alt="YOLO" width="50%">
+    <img src="images/testresult.jpeg" alt="YOLO" width="100%">
 </div>
 
-</div>
+
+
 
 ## はじめに
 
