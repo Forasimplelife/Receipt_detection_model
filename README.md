@@ -1,4 +1,3 @@
-
 # YOLOv9で構築した領収書の検出モデル
 
 ## Summary
@@ -101,7 +100,7 @@ Clone YOLO v9 repository into your Google Drive.
 
 ## モデルをダウンロード
 
-リポジトリをクローンして必要なファイルをインストールした後、ディレクトリを作成し、以下のコードを実行してすべての重み（モデル）をダウンロードして保存することができます。
+リポジトリをクローンして必要なファイルをインストールした後、ディレクトリを作成し、以下のコードを実行してすべての重み（事前学習したモデル）をダウンロードして保存することができます。
 
 ```python
 !wget -P {HOME}/weights -q https://github.com/WongKinYiu/yolov9/releases/download/v0.1/yolov9-c.pt
